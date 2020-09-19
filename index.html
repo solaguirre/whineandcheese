@@ -4,17 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Dime Travel</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
+<nav class="navbar is-warning">
+    <a class="navbar-item">
+        <h1 class="title is-1">See Your Vacation While Checking Out Current Exchange Rates</h1>
+
+    </a>
+</nav>
+
 <body>
+    <div class="container">
+        <div class="notification">
+            <div class="field is-grouped">
+                <p class="control is-expanded">
+                    <input class="input" type="text" placeholder="City, Country">
+                </p>
+                <p class="control">
+                    <a class="button is-dark">
+                        Search
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="notification">
+            <div class="columns">
+                <div class="column">
+                    <!-- Map goes here -->
+                </div>
+                <div class="column">
+                    <!-- Exchange Rates go here-->
+                </div>
+            </div>
+        </div>
+    </div>
 
-
-
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="script.js"></script>
 </body>
 
