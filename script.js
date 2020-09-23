@@ -36,9 +36,13 @@ $.ajax({
 
 
 // Using the coordinates of their destination as search criteria for GoogleMaps' API we will request the map of the destination.
-let map = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + latitude + "," + longitude + "&key=" + googleMapsAPIKey;
-
 // (https://www.google.com/maps/embed/v1/MODE?key=YOUR_API_KEY&parameters) this should generate a map based on the information in googles API key. (information on MODE and parameters can be found at this link https://developers.google.com/maps/documentation/embed/get-started#optional_parameters)
+
+let place = "https://www.google.com/maps/embed/v1/streetview?key=" + googleMapsAPIKey + "&location=" + latitude + "," + longitude + "&heading=210&pitch=10&fov=35"
+
+$("iframe").attr("src", place);
+console.log(place)
+
 
 
 
