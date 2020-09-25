@@ -1,9 +1,9 @@
 let googleMapsAPIKey = "AIzaSyAKeud47fDrKKEOtY9UDxjp4tcM5qx9ZVE";
 // let geoDataSourceAPI = "";
-let geoCodioAPIKey = "11f688a2bb8200b2fa8768d2a051d225fd56868";
+let geoAPIKey = "93d3ded8310f4bcd0816861f0428d0f8";
 let exchangeRateAPIKey = "3d1b0462d3f12a057c13eb57";
-let destination = "Tucson, AZ";
-let geoCodioURL = "https://api.geocod.io/v1.6/geocode?q=" + destination + "&api_key=" + geoCodioAPIKey;
+let destination = "";
+
 let exchangeURL = "https://v6.exchangerate-api.com/v6/" + exchangeRateAPIKey + "/latest/USD"
 let userSearch = "";
 let latitude = 0;
@@ -16,33 +16,49 @@ $.ajax({
     console.log(response);
 });
 // this consoles out the response for the location searched
-$.ajax({
-    url: geoCodioURL,
-    method: "GET"
-}).then(function (response) {
-    console.log(response);
+
+function getLocation(destination) {
+
+    let geoURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + destination + "&appid=" + geoAPIKey;
+
+    $.ajax({
+        url: geoURL,
+        method: "GET"
+    }).then(function (georesponse) {
+        console.log("GEO", georesponse);
 
 
-    // input value in localStorage
+        // variable to store latitude
+        latitude = georesponse.city.coord.lat;
 
-    $(".button").on('click', function () {
-
-        let searchInput = $(".input").val();
-        console.log(searchInput);
-
-        localStorage.setItem(userSearch, searchInput);
-
-        // retrieve data in local storage?
+        // variable to store longitude 
+        longitude = georesponse.city.coord.lon;
 
 
-    })
+        let place = "https://www.google.com/maps/embed/v1/streetview?key=" + googleMapsAPIKey + "&location=" + latitude + "," + longitude + "&heading=210&pitch=10&fov=35"
+
+        $("iframe").attr("src", place);
+        console.log(place)
+
+    });
+};
+
+// input value in localStorage
+$(".button").on('click', function () {
+
+    destination = $(".input").val();
+
+    console.log(destination);
+
+    getLocation(destination);
+
+    localStorage.setItem(userSearch, destination);
+
+    // retrieve data in local storage?
 
 
+})
 
-
-
-
-});
 // based on the call I made just using Tucson, AZ we may be able to reference the lat and long by going results.input.results.0.location[0] for the lat and for the long results.input.results.0.location[1](this may require more digging and checking for consistency to the same results but geoCod.io says that they always list the closest result to the search query at the top of the response.)
 
 
@@ -61,10 +77,8 @@ $.ajax({
 // Using the coordinates of their destination as search criteria for GoogleMaps' API we will request the map of the destination.
 // (https://www.google.com/maps/embed/v1/MODE?key=YOUR_API_KEY&parameters) this should generate a map based on the information in googles API key. (information on MODE and parameters can be found at this link https://developers.google.com/maps/documentation/embed/get-started#optional_parameters)
 
-let place = "https://www.google.com/maps/embed/v1/streetview?key=" + googleMapsAPIKey + "&location=" + latitude + "," + longitude + "&heading=210&pitch=10&fov=35"
+// google map
 
-$("iframe").attr("src", place);
-console.log(place)
 
 
 
@@ -91,16 +105,16 @@ console.log(place)
 // Paris, France|| Rome, Italy|| Cancun, Mexico|| Montego Bay, Jamaica|| Amsterdam, Netherlands|| Kyoto, Japan|| Ushuaia, Argentina|| Cairo, Egypt|| Dubai, United Arab Emirates|| Singapore, Singapore
 
 const currency = {
-mexico : "MXN",
-jamaica : "JMD",
-italy : "EUR",
-france : "EUR",
-netherlands : "EUR",
-japan : "JPY",
-argentina :	"ARS",
-egypt : "EGP",
-unitedArabEmirates : "AED",
-singapore :"SGD",
+    mexico: "MXN",
+    jamaica: "JMD",
+    italy: "EUR",
+    france: "EUR",
+    netherlands: "EUR",
+    japan: "JPY",
+    argentina: "ARS",
+    egypt: "EGP",
+    unitedArabEmirates: "AED",
+    singapore: "SGD",
 };
 // let currency = new Object{
     // Afghanistan	AFN	؋
@@ -309,5 +323,5 @@ singapore :"SGD",
     // Tonga Tongan Pa'Anga	TOP	T$
     // Tuvalu Australian Dollar	AUD	$
     // Vanuatu Vanuatu Vatu	VUV	VT
-  
+
 
