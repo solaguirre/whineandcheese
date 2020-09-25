@@ -21,6 +21,27 @@ $.ajax({
     method: "GET"
 }).then(function (response) {
     console.log(response);
+
+
+    // input value in localStorage
+
+    $(".button").on('click', function () {
+
+        let searchInput = $(".input").val();
+        console.log(searchInput);
+
+        localStorage.setItem(userSearch, searchInput);
+
+        // retrieve data in local storage?
+
+
+    })
+
+
+
+
+
+
 });
 // based on the call I made just using Tucson, AZ we may be able to reference the lat and long by going results.input.results.0.location[0] for the lat and for the long results.input.results.0.location[1](this may require more digging and checking for consistency to the same results but geoCod.io says that they always list the closest result to the search query at the top of the response.)
 
@@ -58,9 +79,6 @@ let map = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + latitude
 
 
 // Time providing we will then also provide the user with an idea of what they can expect to spend on common goods, such as gallon of gas/milk, A big Mac, and maybe something else entertainment based(can only think of movies of the top but thats not terribly relevant rightnow).
-
-
-
 
 
 
