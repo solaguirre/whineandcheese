@@ -21,6 +21,27 @@ $.ajax({
     method: "GET"
 }).then(function (response) {
     console.log(response);
+
+
+    // input value in localStorage
+
+    $(".button").on('click', function () {
+
+        let searchInput = $(".input").val();
+        console.log(searchInput);
+
+        localStorage.setItem(userSearch, searchInput);
+
+        // retrieve data in local storage?
+
+
+    })
+
+
+
+
+
+
 });
 // based on the call I made just using Tucson, AZ we may be able to reference the lat and long by going results.input.results.0.location[0] for the lat and for the long results.input.results.0.location[1](this may require more digging and checking for consistency to the same results but geoCod.io says that they always list the closest result to the search query at the top of the response.)
 
@@ -63,12 +84,13 @@ console.log(place)
 
 
 
+
 // Time providing we will then also provide the user with an idea of what they can expect to spend on common goods, such as gallon of gas/milk, A big Mac, and maybe something else entertainment based(can only think of movies of the top but thats not terribly relevant rightnow).
 
 
 // Paris, France|| Rome, Italy|| Cancun, Mexico|| Montego Bay, Jamaica|| Amsterdam, Netherlands|| Kyoto, Japan|| Ushuaia, Argentina|| Cairo, Egypt|| Dubai, United Arab Emirates|| Singapore, Singapore
 
-let currency = new Object{
+const currency = {
 mexico : "MXN",
 jamaica : "JMD",
 italy : "EUR",
@@ -79,8 +101,8 @@ argentina :	"ARS",
 egypt : "EGP",
 unitedArabEmirates : "AED",
 singapore :"SGD",
-)
-let currency = new Object{
+};
+// let currency = new Object{
     // Afghanistan	AFN	؋
     // Armenia		AMD	դր
 	// Azerbaijan	AZN	₼
@@ -287,4 +309,5 @@ let currency = new Object{
     // Tonga Tongan Pa'Anga	TOP	T$
     // Tuvalu Australian Dollar	AUD	$
     // Vanuatu Vanuatu Vatu	VUV	VT
-  };
+  
+
