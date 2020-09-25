@@ -35,7 +35,7 @@ function getLocation(destination) {
         longitude = georesponse.city.coord.lon;
 
 
-        let place = "https://www.google.com/maps/embed/v1/streetview?key=" + googleMapsAPIKey + "&location=" + latitude + "," + longitude + "&heading=210&pitch=10&fov=35"
+        let place = "https://www.google.com/maps/embed/v1/streetview?key=" + googleMapsAPIKey + "&location=" + latitude + "," + longitude + "&heading=210&pitch=0&fov=100"
 
         $("iframe").attr("src", place);
         console.log(place)
