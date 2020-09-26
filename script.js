@@ -1,7 +1,7 @@
 let googleMapsAPIKey = "AIzaSyAKeud47fDrKKEOtY9UDxjp4tcM5qx9ZVE";
 // let geoDataSourceAPI = "";
 let geoAPIKey = "93d3ded8310f4bcd0816861f0428d0f8";
-let exchangeRateAPIKey = "3d1b0462d3f12a057c13eb57";
+let exchangeRateAPIKey = "51a90cf03b5d4163f9f98fac";
 let destination = "";
 
 let exchangeURL = "https://v6.exchangerate-api.com/v6/" + exchangeRateAPIKey + "/latest/USD"
@@ -9,12 +9,7 @@ let userSearch = "";
 let latitude = 0;
 let longitude = 0;
 // exchange rate AJAX call consoles out repsonse
-$.ajax({
-    url: exchangeURL,
-    method: "GET"
-}).then(function (response) {
-    console.log(response);
-});
+
 // this consoles out the response for the location searched
 
 function getLocation(destination) {
@@ -26,7 +21,7 @@ function getLocation(destination) {
         method: "GET"
     }).then(function (georesponse) {
         console.log("GEO", georesponse);
-
+        getExchangeRate(georesponse.city.country);
 
         // variable to store latitude
         latitude = georesponse.city.coord.lat;
@@ -58,27 +53,20 @@ $(".button").on('click', function () {
 
 
 })
-
-// based on the call I made just using Tucson, AZ we may be able to reference the lat and long by going results.input.results.0.location[0] for the lat and for the long results.input.results.0.location[1](this may require more digging and checking for consistency to the same results but geoCod.io says that they always list the closest result to the search query at the top of the response.)
-
-
-
-
-// When the user starts they will enter in the name of their destination. (Might want to use the search box we are using for hw6 for this part) 
-
-
-
-
-// After they enter in the destination we will use their input to request information from GeoCod.io to get the coordinates of their destination. (if response consistently returns the same pathing to the lat and long then we are golden and will just need to change the variables for latitude and longitude to equal the response.)
-
-
-
-
-// Using the coordinates of their destination as search criteria for GoogleMaps' API we will request the map of the destination.
-// (https://www.google.com/maps/embed/v1/MODE?key=YOUR_API_KEY&parameters) this should generate a map based on the information in googles API key. (information on MODE and parameters can be found at this link https://developers.google.com/maps/documentation/embed/get-started#optional_parameters)
-
-// google map
-
+function getExchangeRate(georesponse){
+$.ajax({
+    url: exchangeURL,
+    method: "GET"
+}).then(function (curresponse) {
+    console.log(curresponse);
+    console.log(destination);
+    let cityData = georesponse;
+    console.log(cityData);
+    let countryCodeResult = countryCode(georesponse)
+    let currencyConversionRates = curresponse.conversion_rates[countryCodeResult];
+    console.log(countryCodeResult);
+    console.log(currencyConversionRates);
+})
 
 
 
@@ -97,25 +85,26 @@ $(".button").on('click', function () {
 
 
 
-
-
 // Time providing we will then also provide the user with an idea of what they can expect to spend on common goods, such as gallon of gas/milk, A big Mac, and maybe something else entertainment based(can only think of movies of the top but thats not terribly relevant rightnow).
 
 
-// Paris, France|| Rome, Italy|| Cancun, Mexico|| Montego Bay, Jamaica|| Amsterdam, Netherlands|| Kyoto, Japan|| Ushuaia, Argentina|| Cairo, Egypt|| Dubai, United Arab Emirates|| Singapore, Singapore
-
-const currency = {
-    mexico: "MXN",
-    jamaica: "JMD",
-    italy: "EUR",
-    france: "EUR",
-    netherlands: "EUR",
-    japan: "JPY",
-    argentina: "ARS",
-    egypt: "EGP",
-    unitedArabEmirates: "AED",
-    singapore: "SGD",
+// Paris, France|| Sydney, Australia|| Cancun, Mexico|| Seoul, South Korea|| Amsterdam, Netherlands|| Kyoto, Japan|| Buenos Aires, Argentina|| Cairo, Egypt|| Dubai, United Arab Emirates|| Singapore, Singapore
+function countryCode(country){
+const countryToCurrencyCode = {
+    MX: "MXN",
+    AU: "AUD",
+    KR: "KRW",
+    FR: "EUR",
+    NL: "EUR",
+    JP: "JPY",
+    AR: "ARS",
+    EG: "EGP",
+    AE: "AED",
+    SG: "SGD",
 };
+return countryToCurrencyCode[country];
+}
+}
 // let currency = new Object{
     // Afghanistan	AFN	؋
     // Armenia		AMD	դր
@@ -323,5 +312,3 @@ const currency = {
     // Tonga Tongan Pa'Anga	TOP	T$
     // Tuvalu Australian Dollar	AUD	$
     // Vanuatu Vanuatu Vatu	VUV	VT
-
-
