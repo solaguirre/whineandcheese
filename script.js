@@ -66,6 +66,7 @@ $.ajax({
     let currencyConversionRates = curresponse.conversion_rates[countryCodeResult];
     console.log(countryCodeResult);
     console.log(currencyConversionRates);
+    $("#exchangeRate").text("1 USD = " + 1*currencyConversionRates.toFixed(2) + " " + countryCodeResult);
 })
 
 
