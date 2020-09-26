@@ -1,153 +1,66 @@
-# Dime_Travel
-<!--
-*** Thanks for checking out this README Template. If you have a suggestion that would
-*** make this better, please fork the repo and create a pull request or simply open
-*** an issue with the tag "enhancement".
-*** Thanks again! Now go create something AMAZING! :D
-***
-***
-***
-*** To avoid retyping too much info. Do a search and replace for the following:
-*** github_username, repo_name, twitter_handle, email
--->
-
-
-
-
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-
-<!-- PROJECT LOGO -->
-<br />
+# Project 1: Dime Travel
 <p align="center">
-  <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
+<i class="fas fa-globe-americas"></i>
 
-  <h3 align="center">Dime_Travel</h3>
+  <h3 align="center"><strong> Dime Travel</strong></h3>
 
   <p align="center">
     Visualize your vacation destination while veiwing the currency exchange rate.
     <br />
-    <a href="https://github.com/solaguirre/whineandcheese"><strong>Explore the docs »</strong></a>
+    <br />
+    <a href="https://github.com/solaguirre/whineandcheese"><strong>View Demo »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
-    ·
-    <a href="https://github.com/solaguirre/whineandcheese/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+   
   </p>
 </p>
 
-
-
-<!-- TABLE OF CONTENTS -->
-## Table of Contents
-
-* [About the Project](#about-the-project)
-  * [Built With](#built-with)
-* [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
-* [Usage](#usage)
-* [Roadmap](#roadmap)
-* [Contributing](#contributing)
-* [License](#license)
-* [Contact](#contact)
-* [Acknowledgements](#acknowledgements)
-
-
-
-<!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+Dime travel helps you visualize your vacation and see the exchage rates for foreign currencies. Along with the exchange rate you see a map reflecting your destination. 
 
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`github_username`, `repo_name`, `twitter_handle`, `email`
+### Created With
 
-
-### Built With
-
-* HTML, CSS, JavaScript
+* HTML
+* JavaScript
+* jQuery
 * Bulma
+* CSS
 
+### API's Used
 
+* [Google Maps](https://cloud.google.com/maps-platform/?utm_source=google&utm_medium=cpc&utm_campaign=FY18-Q2-global-demandgen-paidsearchonnetworkhouseads-cs-maps_contactsal_saf&utm_content=text-ad-none-none-DEV_c-CRE_460848633508-ADGP_Hybrid+%7C+AW+SEM+%7C+BKWS+~+Google+Maps+API-KWID_43700033921822021-aud-599437144768:kwd-335425467-userloc_9030231&utm_term=KW_google%20maps%20api-ST_google+maps+api&gclid=Cj0KCQjwzbv7BRDIARIsAM-A6-2WYiMOdTkT-eh_ghI-3G5tMAPLEBAlds8UWj7npULaolKHlBIiAYwaAkSGEALw_wcB) for map widget to display location.
+* [ExchangeRate-API](https://www.exchangerate-api.com/) for current currency exchange rates, updated every 10 minutes.
+* [OpenWeather:](https://openweathermap.org/) to obtain location coordinates
 
-<!-- GETTING STARTED -->
-## Getting Started
-
-To get a local copy up and running follow these simple steps.
-
-
-### Installation
-
-1. Clone the repo
-```sh
-git clone https://github.com/solaguirre/whineandcheese.git
-
-
-
-<!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+***This is what the page looks like:***
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+Amsterdam, Netherlands
 
+[![Screen-Shot-2020-09-26-at-2-25-09-PM.png](https://i.postimg.cc/kGnHbMgq/Screen-Shot-2020-09-26-at-2-25-09-PM.png)](https://postimg.cc/8J0w8Sv0)
 
+***Examples of different city/country searches:***
 
-<!-- ROADMAP -->
-## Roadmap
+Mexico City, Mexico
+[![Screen-Shot-2020-09-26-at-2-24-39-PM.png](https://i.postimg.cc/yNL3Hv3j/Screen-Shot-2020-09-26-at-2-24-39-PM.png)](https://postimg.cc/5HF2553Q)
 
-See the [open issues](https://github.com/github_username/repo_name/issues) for a list of proposed features (and known issues).
+Kyoto, Japan
 
+[![Screen-Shot-2020-09-26-at-2-30-12-PM.png](https://i.postimg.cc/MK4wfLgN/Screen-Shot-2020-09-26-at-2-30-12-PM.png)](https://postimg.cc/HVQRf6Y9)
 
+## Project Contributors
 
-<!-- CONTRIBUTING -->
-## Contributing
+* Kristopher Kaae
+* Shoshanah Lo Greco
+* Rhiley Southam
+* Marisol Aguirre
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Project Link: [https://solaguirre.github.io/whineandcheese/](https://solaguirre.github.io/whineandcheese/)
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+## Sources
 
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
-
-
-<!-- CONTACT -->
-## Contact
-names 
-Sol Aguirre
-
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
-
-
-
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-
-* []()
-* []()
-* []()
-
+* [ReadMe Template source](https://github.com/othneildrew/Best-README-Template)
 
 
