@@ -1,14 +1,14 @@
 .navbar {
     max-width: 100%;
-    font-family: fantasy;
-    background-color:grey;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color:rgb(8, 8, 8);
     padding: 20px 30px;
-    margin-left: 2%;
+    margin-left: 3%;
     margin-top: 25px;
     bottom:20px;
-    border-width: 10px;
+    border-width: thick;
     border-style: ridge; 
-    border-color:black;
+    border-color:rgb(7, 7, 6);
 }
 .container {
     margin-top: 5px;
@@ -17,7 +17,7 @@
     padding: 20px 28px;
     border-width: 20px;
 border-style: groove;
-border-color: grey;
+border-color: rgb(102, 100, 100);
 
 }
 .button{
@@ -26,8 +26,8 @@ border-color: grey;
     
 }
 .columns {
-    padding-right: 10%;
-    margin-top: 5%;
+    padding-right: 0%;
+    margin-top: 0%;
     background-color:black; 
     border-width: 20px;
     border-style: ridge; 
@@ -45,13 +45,11 @@ border-color: grey;
 h1 {
     margin-left:  150px;
     margin-right: 150px;  
-    border-width: 5px;
-    border-style: groove; 
-    border-color: black;
+    
     
 }
 .glow {
-font-size: 50px;
+font-size: 40px;
 color:rgb(10, 10, 10);
 -webkit-animation: glow 1s ease-in-out infinite alternate;
 -moz-animation: glow 1s ease-in-out infinite alternate;
@@ -59,16 +57,16 @@ animation: glow 1s ease-in-out infinite alternate;
 }
 @-webkit-keyframes glow {
     from {
-    text-shadow: 0 0 10px rgb(87, 223, 9), 0 0 20px rgb(202, 128, 9), 0 0 30px #eb9409, 0 0 40px #3ad30b, 0 0 50px #0b0fee, 0 0 60px #f3ef06, 0 0 70px #12dbe2;
+    text-shadow: 0 0 10px rgb(87, 223, 9), 0 0 20px rgb(30, 143, 36), 0 0 30px #11c34d, 0 0 40px #4bc327, 0 0 50px #0fd841, 0 0 60px #20ad1b, 0 0 70px #29be16;
     }
     to {
-    text-shadow: 0 0 30px rgb(229, 233, 9), 0 0 30px #eb700b, 0 0 40px #e77212, 0 0 50px #f68708, 0 0 60px #09e6c8, 0 0 70px #0a19e7, 0 0 80px #0f60e4;
+    text-shadow: 0 0 30px rgb(16, 211, 26), 0 0 30px #31dd13, 0 0 40px #1cb40f, 0 0 50px #31902e, 0 0 60px #46c71f, 0 0 70px #298037, 0 0 80px #07ee26;
     }
-  }
-  iframe {
+}
+iframe {
 column-width: 100% ;
 margin-left: 0px;
 border-width: 20px;
 border-style: groove;
 border-color: rgb(230, 9, 9);
-  }
+}
