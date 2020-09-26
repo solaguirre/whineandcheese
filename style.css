@@ -1,7 +1,12 @@
 iframe {
+    height: 400px;
     width: 100% ;
     margin-left: 0px;
-    margin-top: 50px;
+    margin-top: 0px;
+    border-width: 10px;
+    border-style: ridge; 
+    border-color:rgb(54, 54, 53);
+
     }
 
 .hero {
@@ -15,8 +20,14 @@ iframe {
     border-style: ridge; 
     border-color:rgb(54, 54, 53);
     background-color: rgb(14, 14, 13);
+    widows: 100px;
+}
 
-
+#exchangeRate {
+color: white;
+font-family: monospace;
+cursor:pointer;
+}
 
 
 
