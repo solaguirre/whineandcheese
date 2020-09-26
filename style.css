@@ -4,8 +4,17 @@ iframe {
     margin-top: 50px;
     }
 
+.hero {
+    border-width: 20px;
+    border-style: ridge; 
+    border-color:rgb(54, 54, 53);
 
-
+}
+.section {
+    border-width: 20px;
+    border-style: ridge; 
+    border-color:rgb(54, 54, 53);
+    background-color: rgb(14, 14, 13);
 
 
 
